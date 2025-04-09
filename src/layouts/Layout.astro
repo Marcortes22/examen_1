@@ -14,7 +14,7 @@ import scriptURL from '../../public/asientos.js?url';
     <main class="max-w-4xl mx-auto">
       <slot />
     </main>
-    <script type="module" src={scriptURL}></script>
+    <script type="module" src={`${Astro.site}/asientos.js`}></script>
   </body>
 </html>
 
