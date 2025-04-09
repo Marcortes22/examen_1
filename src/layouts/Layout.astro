@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 const { title = 'TEATRO-UNA' } = Astro.props;
+import scriptURL from '../../public/asientos.js?url';
 ---
 
 <html lang="es">
@@ -13,7 +14,7 @@ const { title = 'TEATRO-UNA' } = Astro.props;
     <main class="max-w-4xl mx-auto">
       <slot />
     </main>
-    <script type="module" src="/asientos.js"></script>
+    <script type="module" src={scriptURL}></script>
   </body>
 </html>
 
