@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Asiento from '../components/Asiento.astro';
+---
+
+<Layout title="TEATRO-UNA">
+  <h1 class="text-4xl font-bold text-center mb-6">TEATRO-UNA</h1>
+
+  <div class="bg-black text-white text-center py-3 rounded mb-6">ESCENARIO</div>
+
+  <div id="sala" class="flex flex-col items-center gap-2">
+    {
+      Array.from({ length: 10 }, (_, fila) => (
+        <div class="flex gap-2">
+          {Array.from({ length: 12 }, (_, col) => (
+            <Asiento id={fila * 12 + col} />
+          ))}
+        </div>
+      ))
+    }
+  </div>
+
+  <form class="mt-8 flex flex-col gap-4 items-center">
+    <label for="cantidad" class="text-lg font-medium"
+      >¿Cuántos asientos desea reservar?</label
+    >
+    <input
+      type="number"
+      id="cantidad"
+      min="1"
+      class="border rounded p-2 w-40 text-center"
+    />
+    <button
+      type="button"
+      onclick="buscarAsientos()"
+      class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+    >
+      Confirmar Reserva
+    </button>
+  </form>
+
+  <footer class="bg-gray-800 text-white text-center p-4 mt-10 rounded">
+    <p>TEATRO-UNA</p>
+    <p>Nicoya, Guanacaste</p>
+    <p>Tel: 2686-1234 | teatro@una.ac.cr</p>
+  </footer>
+</Layout>

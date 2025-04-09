@@ -1,0 +1,11 @@
+---
+const { id } = Astro.props;
+---
+
+<button
+  class="asiento w-10 h-10 bg-green-300 hover:bg-green-400 rounded transition text-sm"
+  data-id={id}
+  data-ocupado="false"
+>
+  {id}
+</button>
